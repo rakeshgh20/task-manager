@@ -71,6 +71,17 @@ def delete_tasks(tasks):
     except (IndexError, ValueError):
         print("Enter a valid index")
 
+def edit_task(tasks):
+    list_tasks(tasks)
+    try:
+        index = int(input("Enter task number to edit: ")) - 1
+        tasks[index]['title'] = input("Enter new title: ")
+        tasks[index]['category'] = input("Enter new category: ")
+        save_tasks(tasks)
+        print("Task updated")
+    except (IndexError, ValueError):
+        print("Enter a valid index")
+
 def main():
     tasks = load_tasks()
 
@@ -81,7 +92,8 @@ def main():
         print("3. Delete Task")
         print("4. List by Category")
         print("5. Mark Done")
-        print("6. Quit")
+        print("6. Edit Task")
+        print("7. Quit")
 
         choice = input("Enter your choice: ")
 
@@ -96,6 +108,8 @@ def main():
         elif choice == '5':
             mark_done(tasks)
         elif choice == '6':
+            edit_task(tasks)
+        elif choice == '7':
             print("Thank you!")
             break
         else:
