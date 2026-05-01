@@ -83,7 +83,7 @@ def main():
         print("5. Mark Done")
         print("6. Quit")
 
-        choice = input("Enter your choice: ")
+        choice = input("Enter your choice for doing some tasks: ")
 
         if choice == '1':
             add_tasks(tasks)
