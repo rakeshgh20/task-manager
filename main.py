@@ -95,7 +95,7 @@ def main():
         print("6. Edit Task")
         print("7. Quit")
 
-        choice = input("Enter your choice: ")
+        choice = input("Enter your choice for doing some tasks: ")
 
         if choice == '1':
             add_tasks(tasks)
